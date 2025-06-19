@@ -6,7 +6,7 @@ on:
     - cron: '0 2 * * *' # Lance le workflow tous les jours à 2h du matin
 
 jobs:
-  run-updated-stats:
+  run-update-stats:
     runs-on: ubuntu-latest
 
     permissions:

@@ -1,8 +1,11 @@
 import csv
 import os
 import requests
+import time
 from datetime import datetime
 
+overpass_url: str = "http://overpass-api.de/api/interpreter"
+max_retries: int = 3
 
 def get_query(area_condition: str, has_species: bool) -> str:
     species_condition = "species" if has_species else "!species"
@@ -14,14 +17,19 @@ def get_query(area_condition: str, has_species: bool) -> str:
     """
 
 def run_overpass_query(query: str) -> dict:
-    overpass_url = "http://overpass-api.de/api/interpreter"
-    try:
-        response = requests.get(overpass_url, params={'data': query})
-        response.raise_for_status()  # Raises an HTTPError for bad responses
-        return response.json()
-    except requests.exceptions.RequestException as e:
-        print(f"An error occurred: {e}")
-        return 0
+    for attempt in range(max_retries):
+        try:
+            response = requests.get(overpass_url, params={'data': query})
+            response.raise_for_status()  # Raises an HTTPError for bad responses
+            return response.json()
+        except requests.exceptions.RequestException as e:
+            print(f"Attempt {attempt + 1} failed: {e}")
+            if attempt < max_retries - 1:
+                time.sleep(60)  # Wait for a minute before retrying
+                continue
+            print("Max retries reached. Could not complete the request.")
+            return 0
+    return 0
 
 def get_total(area: str, has_species: bool) -> int:
     query = get_query(area, has_species)
