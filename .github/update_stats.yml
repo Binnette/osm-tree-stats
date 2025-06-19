@@ -1,0 +1,38 @@
+name: Update stats
+
+on:
+  workflow_dispatch: # Permet de lancer le workflow manuellement depuis l'interface web
+  schedule:
+    - cron: '0 2 * * *' # Lance le workflow tous les jours à 2h du matin
+
+jobs:
+  run-scripts:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.11' # Spécifie la version de Python à utiliser
+
+    - name: Install dependencies
+      run: |
+        # python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Update trees data CSV
+      run: python 01_get_trees_data.py
+
+    - name: Update diagrams
+      run: python 02_draw_diagrams.py
+
+    - name: Commit changes
+      run: |
+        git config --global user.name 'GitHub Actions'
+        git config --global user.email 'actions@github.com'
+        git add .
+        git commit -m "Update data $(date +'%Y-%m-%d')"
+        git push
