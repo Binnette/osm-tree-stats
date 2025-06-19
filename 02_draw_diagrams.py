@@ -51,3 +51,7 @@ for i in range(1, len(data.columns) - 1, 2):
     plot_file_path = f'assets/{location}.png'
     plt.savefig(plot_file_path)
     plt.close()
+
+    print(f"Plot saved to {plot_file_path}")
+
+print("All plots generated and saved in the 'assets' directory.")

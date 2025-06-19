@@ -29,10 +29,10 @@ jobs:
     - name: Update diagrams
       run: python 02_draw_diagrams.py
 
+    - name: Get the current date
+      run: echo "current_date=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+
     - name: Commit changes
-      run: |
-        git config --global user.name 'GitHub Actions'
-        git config --global user.email 'actions@github.com'
-        git add .
-        git commit -m "Update data $(date +'%Y-%m-%d')"
-        git push
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: "Update stats ${{ env.current_date }}"
