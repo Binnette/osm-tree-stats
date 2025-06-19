@@ -6,8 +6,11 @@ on:
     - cron: '0 2 * * *' # Lance le workflow tous les jours à 2h du matin
 
 jobs:
-  run-scripts:
+  run-updated-stats:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
 
     steps:
     - name: Checkout repository
