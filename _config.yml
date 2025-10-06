@@ -1,0 +1,18 @@
+title: OSM Tree Stats
+email: binnette@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+  This site presents a series of historical diagrams that trace the evolution of tree species mapping on OpenStreetMap.
+  Our focus is on France and some of its subregions, with data updated automatically every day.
+github_username: Binnette
+github_repo: osm-tree-stats
+
+#remote_theme: snipcart/stackbit-theme-planty
+remote_theme: Binnette/jekyll-map-theme
+
+jekyll-map-theme:
+  # Use this parameter to change the image background
+  # Possible values: map-icons, rtk or camera
+  background_image: trees
+
+plugins:
+  - jekyll-remote-theme

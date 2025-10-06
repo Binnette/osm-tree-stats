@@ -1,98 +1,33 @@
 # osm-tree-stats
-Statistics about trees on OpenStreetMap
+__🌳🌲🌴 Tree Species Evolution on OpenStreetMap__
 
-## France
+__➡️ [Access the website (🇬🇧)](https://binnette.github.io/osm-tree-stats/)__
 
-![France](assets/france.png)
+Welcome to a data-driven exploration of tree species mapping on OpenStreetMap (OSM), with a focus on France and some of its regions. This website is built using [Jekyll](https://jekyllrb.com/) and hosted on [GitHub Pages](https://pages.github.com/), using a theme inspired by trees and ecological growth.
 
-## Auvergne-Rhône-Alpes
+## 📈 What You'll Find Here
 
-![Auvergne-Rhône-Alpes](assets/aura.png)
+- **Daily-updated diagrams** showing the number of trees with known species on OSM.
+- **Historical trends** for:
+  - France 🇫🇷
+  - Auvergne-Rhône-Alpes region
+  - Isère department
+  - Grenoble city
+  - etc.
+- **Automated updates** powered by GitHub Actions.
 
-## Isère
+## 🌿 Purpose
 
-![Isère](assets/isere.png)
+This project aims to visualize the growing richness of tree data on OpenStreetMap, helping communities and mappers understand ecological patterns and data quality over time.
 
-## Grenoble-Alpes-Métropole
+## ⚙️ Technical Notes
 
-![Grenoble-Alpes-Métropole](assets/metro.png)
+- Diagrams are generated and updated daily via GitHub Actions.
+- Data is sourced from public OSM extracts and processed with custom scripts.
+- The site uses a tree-themed Jekyll layout for visual coherence.
 
-## Grenoble
+## 📬 Contributions & Feedback
 
-![Grenoble](assets/grenoble.png)
+Feel free to open issues or pull requests if you'd like to contribute, suggest improvements, or report bugs. You can also reach out via the Discussions tab.
 
-### Secteurs
-
-#### Secteur 1
-
-![Secteur 1](assets/secteur1.png)
-
-#### Secteur 2
-
-![Secteur 2](assets/secteur2.png)
-
-#### Secteur 3
-
-![Secteur 3](assets/secteur3.png)
-
-#### Secteur 4
-
-![Secteur 4](assets/secteur4.png)
-
-#### Secteur 5
-
-![Secteur 5](assets/secteur5.png)
-
-#### Secteur 6
-
-![Secteur 6](assets/secteur6.png)
-
-### Quartiers
-
-#### Teisseire
-
-![Teisseire](assets/teisseire.png)
-
-#### Malherbe
-
-![Malherbe](assets/malherbe.png)
-
-#### Villeneuve
-
-![Villeneuve](assets/villeneuve.png)
-
-#### Vigny-Muset
-
-![Vigny-Muset](assets/vigny_musset.png)
-
-#### Village Olympique
-
-![Village Olympique](assets/village_olympique.png)
-
-## Echirolles
-
-![Echirolles](assets/echirolles.png)
-
-## Eybens
-
-![Eybens](assets/eybens.png)
-
-## Saint-Martin-d'Hères
-
-![Saint-Martin-d'Hères](assets/saint_martin.png)
-
-## La Tronche
-
-![La Tronche](assets/la_tronche.png)
-
-## Fontaine
-
-![Fontaine](assets/fontaine.png)
-
-## Seyssinet-Pariset
-
-![Seyssinet-Pariset](assets/seyssinet_pariset.png)
-
-## Seyssins
-
-![Seyssins](assets/seyssins.png)
+---
