@@ -18,8 +18,16 @@ for i in range(1, len(data.columns) - 1, 2):
     # Extract the location name from the column name
     location = species_col.replace('_species', '')
 
+    # Get the most recent row
+    latest_row = data.iloc[-1]
+    species_count = latest_row[species_col]
+    no_species_count = latest_row[no_species_col]
+
+    # Calculate percentage of trees with known species
+    total = species_count + no_species_count
+    percentage = round(species_count * 100 / total, 1)
+
     # Prepare the data for plotting
-    #plot_data = data[['date', species_col, no_species_col]].copy()
     plot_data = data[['date', species_col]].copy()
 
     # Ensure the 'date' column is unique and correctly formatted
@@ -28,21 +36,22 @@ for i in range(1, len(data.columns) - 1, 2):
     # Drop rows with NaT in the 'date' column if conversion failed
     plot_data = plot_data.dropna(subset=['date'])
 
-    plot_data = plot_data.melt(id_vars='date', value_vars=[species_col], #, no_species_col],
+    # Rename category for plotting
+    plot_data = plot_data.rename(columns={species_col: 'With species'})
+    plot_data = plot_data.melt(id_vars='date', value_vars=['With species'],
                                var_name='Category', value_name='Number of Trees')
 
     # Set up the plot
     plt.figure(figsize=(10, 6))
     sns.lineplot(data=plot_data, x='date', y='Number of Trees', hue='Category', palette='viridis', marker='o')
 
-
     # Adapt the Y-axis scale
-    # Dynamically set the Y-axis scale based on the data range
     y_min = plot_data['Number of Trees'].min() - 0.001 * plot_data['Number of Trees'].max()
     y_max = plot_data['Number of Trees'].max() + 0.001 * plot_data['Number of Trees'].max()
     plt.ylim(y_min, y_max)
 
-    plt.title(f'Number of Trees with Known Species') # vs Unknown Species in {location} Over Time')
+    # Update title with percentage
+    plt.title(f'{percentage}% of trees with known species')
     plt.ylabel('Number of Trees')
     plt.xlabel('Date')
     plt.legend(title='Category')
