@@ -8,13 +8,13 @@ title: Tree Species Evolution
 
 Welcome! This site presents a series of historical diagrams that trace the evolution of tree species mapping on OpenStreetMap. Our focus is on France and some of its subregions, with data updated automatically every day.
 
-## 📊 Diagrams Overview
+## 📊 Diagram Overview
 
-- **France**: The top diagram shows the increasing number of trees with known species across the country.
+- **France**: The top diagram shows the growing number of trees with identified species across the country.
 - **Auvergne-Rhône-Alpes**: Regional trends in species tagging.
 - **Isère**: Department-level insights.
 - **Grenoble**: Urban mapping dynamics.
-- etc.
+- And more...
 
 Each diagram reflects the cumulative growth of species-tagged trees, helping visualize ecological awareness and mapping precision over time.
 
@@ -40,33 +40,33 @@ Each diagram reflects the cumulative growth of species-tagged trees, helping vis
 
 ![Grenoble](assets/grenoble.png)
 
-### Secteurs
+### Districts
 
-#### Secteur 1
+#### District 1
 
 ![Secteur 1](assets/secteur1.png)
 
-#### Secteur 2
+#### District 2
 
 ![Secteur 2](assets/secteur2.png)
 
-#### Secteur 3
+#### District 3
 
 ![Secteur 3](assets/secteur3.png)
 
-#### Secteur 4
+#### District 4
 
 ![Secteur 4](assets/secteur4.png)
 
-#### Secteur 5
+#### District 5
 
 ![Secteur 5](assets/secteur5.png)
 
-#### Secteur 6
+#### District 6
 
 ![Secteur 6](assets/secteur6.png)
 
-### Quartiers
+### Neighborhoods
 
 #### Teisseire
 
@@ -80,17 +80,17 @@ Each diagram reflects the cumulative growth of species-tagged trees, helping vis
 
 ![Villeneuve](assets/villeneuve.png)
 
-#### Vigny-Muset
+#### Vigny-Musset
 
-![Vigny-Muset](assets/vigny_musset.png)
+![Vigny-Musset](assets/vigny_musset.png)
 
 #### Village Olympique
 
 ![Village Olympique](assets/village_olympique.png)
 
-## Echirolles
+## Échirolles
 
-![Echirolles](assets/echirolles.png)
+![Échirolles](assets/echirolles.png)
 
 ## Eybens
 
