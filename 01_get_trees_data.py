@@ -132,28 +132,28 @@ village_olympique_species = get_total('[landuse=residential][name="Village Olymp
 village_olympique_no_species = get_total('[landuse=residential][name="Village Olympique"]', False)
 print_result("Grenoble Village Olympique", village_olympique_species, village_olympique_no_species)
 
-echirolles_species = get_total('[name="Échirolles"]', True)
-echirolles_no_species = get_total('[name="Échirolles"]', False)
+echirolles_species = get_total('[name="Échirolles"][admin_level=8]', True)
+echirolles_no_species = get_total('[name="Échirolles"][admin_level=8]', False)
 print_result("Échirolles", echirolles_species, echirolles_no_species)
 
-eybens_species = get_total('[name="Eybens"]', True)
-eybens_no_species = get_total('[name="Eybens"]', False)
+eybens_species = get_total('[name="Eybens"][admin_level=8]', True)
+eybens_no_species = get_total('[name="Eybens"][admin_level=8]', False)
 print_result("Eybens", eybens_species, eybens_no_species)
 
-saint_martin_species = get_total("[name=\"Saint-Martin-d'Hères\"]", True)
-saint_martin_no_species = get_total("[name=\"Saint-Martin-d'Hères\"]", False)
+saint_martin_species = get_total("[name=\"Saint-Martin-d'Hères\"][admin_level=8]", True)
+saint_martin_no_species = get_total("[name=\"Saint-Martin-d'Hères\"][admin_level=8]", False)
 print_result("Saint-Martin-d'Hères", saint_martin_species, saint_martin_no_species)
 
-la_tronche_species = get_total('[name="La Tronche"]', True)
-la_tronche_no_species = get_total('[name="La Tronche"]', False)
+la_tronche_species = get_total('[name="La Tronche"][admin_level=8]', True)
+la_tronche_no_species = get_total('[name="La Tronche"][admin_level=8]', False)
 print_result("La Tronche", la_tronche_species, la_tronche_no_species)
 
-fontaine_species = get_total('[name="Fontaine"]', True)
-fontaine_no_species = get_total('[name="Fontaine"]', False)
+fontaine_species = get_total('[name="Fontaine"][admin_level=8]', True)
+fontaine_no_species = get_total('[name="Fontaine"][admin_level=8]', False)
 print_result("Fontaine", fontaine_species, fontaine_no_species)
 
-seyssinet_pariset_species = get_total('[name="Seyssinet-Pariset"]', True)
-seyssinet_pariset_no_species = get_total('[name="Seyssinet-Pariset"]', False)
+seyssinet_pariset_species = get_total('[name="Seyssinet-Pariset"][admin_level=8]', True)
+seyssinet_pariset_no_species = get_total('[name="Seyssinet-Pariset"][admin_level=8]', False)
 print_result("Seyssinet-Pariset", seyssinet_pariset_species, seyssinet_pariset_no_species)
 
 seyssins_species = get_total('[name="Seyssins"]', True)
