@@ -12,7 +12,7 @@ BLUE = "\033[94m"
 RESET = "\033[0m"
 
 overpass_url: str = "http://overpass-api.de/api/interpreter"
-max_retries: int = 3
+max_retries: int = 5
 
 def get_query(area_condition: str, has_species: bool) -> str:
     species_condition = "species" if has_species else "!species"
@@ -24,15 +24,16 @@ def get_query(area_condition: str, has_species: bool) -> str:
     """
 
 def run_overpass_query(query: str) -> dict:
-    for attempt in range(max_retries):
+    for attempt in range(1, max_retries + 1):
         try:
             response = requests.get(overpass_url, params={'data': query})
             response.raise_for_status()
             data = response.json()
             return int(data['elements'][0]['tags']['total'])
         except Exception as e:
-            print(f"{RED}❌ Attempt {attempt + 1} failed: {e}{RESET}")
-            time.sleep(60)
+            sleep_duration = 60 * (attempt ** 2)
+            print(f"{RED}❌ Attempt {attempt} failed (wait {sleep_duration}s): {e}{RESET}")
+            time.sleep(sleep_duration)
     print(f"{RED}❌ All attempts failed. Giving up.{RESET}")
     return None
 
