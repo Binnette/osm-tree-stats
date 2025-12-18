@@ -27,7 +27,7 @@ jobs:
         pip install -r requirements.txt
 
     - name: Update trees data CSV
-      run: python 01_get_trees_data.py
+      run: python -u 01_get_trees_data.py
 
     - name: Update diagrams
       run: python 02_draw_diagrams.py

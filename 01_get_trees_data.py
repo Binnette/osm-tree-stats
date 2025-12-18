@@ -12,7 +12,7 @@ BLUE = "\033[94m"
 RESET = "\033[0m"
 
 overpass_url: str = "http://overpass-api.de/api/interpreter"
-max_retries: int = 5
+max_retries: int = 3
 
 def get_query(area_condition: str, has_species: bool) -> str:
     species_condition = "species" if has_species else "!species"
