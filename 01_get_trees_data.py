@@ -35,7 +35,7 @@ def run_overpass_query(query: str) -> dict:
             print(f"{RED}❌ Attempt {attempt} failed (wait {sleep_duration}s): {e}{RESET}")
             time.sleep(sleep_duration)
     print(f"{RED}❌ All attempts failed. Giving up.{RESET}")
-    return None
+    return 0
 
 def get_total(area: str, has_species: bool) -> int:
     query = get_query(area, has_species)
