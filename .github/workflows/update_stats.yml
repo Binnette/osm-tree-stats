@@ -1,9 +1,9 @@
 name: Update stats
 
 on:
-  workflow_dispatch: # Permet de lancer le workflow manuellement depuis l'interface web
+  workflow_dispatch: # Allows manual triggering from the web interface
   schedule:
-    - cron: '0 2 * * *' # Lance le workflow tous les jours à 2h du matin
+    - cron: '0 2 * * *' # Runs the workflow daily at 2 AM
 
 jobs:
   run-update-stats:
@@ -12,6 +12,9 @@ jobs:
     permissions:
       contents: write
 
+    env:
+      PYTHONUNBUFFERED: 1  # Enable python unbuffered output
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
@@ -19,15 +22,14 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.11' # Spécifie la version de Python à utiliser
+        python-version: '3.13'
 
     - name: Install dependencies
       run: |
-        # python -m pip install --upgrade pip
         pip install -r requirements.txt
 
     - name: Update trees data CSV
-      run: python -u 01_get_trees_data.py
+      run: python 01_get_trees_data.py
 
     - name: Update diagrams
       run: python 02_draw_diagrams.py
